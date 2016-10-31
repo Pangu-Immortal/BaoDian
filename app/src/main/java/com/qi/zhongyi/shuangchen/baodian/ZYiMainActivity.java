@@ -21,10 +21,11 @@ public class ZYiMainActivity extends BaseActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         //这里使用的是slidingmenu的第三种用法。
         setContentView(R.layout.slidingmenu_main);
+        View view=getLayoutInflater().inflate(R.layout.main_menu_login, null, false);
         // 管理activity
         ActivityUtil.getInstance().addActivity(this);
         //初始化菜单
-        initMenu();
+        initMenu(view);
         // 判断当前SDK版本号，如果是4.4以上，就是支持沉浸式状态栏的
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -32,8 +33,7 @@ public class ZYiMainActivity extends BaseActivity {
         }
     }
 
-    private void initMenu() {
-        View view=getLayoutInflater().inflate(R.layout.main_menu_login, null, false);
+    private void initMenu(View view) {
         mMenu=(SlidingMenu) findViewById(R.id.slidingmenulayout);
         mMenu.setMode(SlidingMenu.LEFT);
         // 设置触摸屏幕的模式
