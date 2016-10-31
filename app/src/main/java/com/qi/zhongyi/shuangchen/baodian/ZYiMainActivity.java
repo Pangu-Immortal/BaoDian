@@ -1,5 +1,6 @@
 package com.qi.zhongyi.shuangchen.baodian;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -7,12 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.qi.zhongyi.shuangchen.baodian.adapters.ListMunuAdapter;
+import com.qi.zhongyi.shuangchen.baodian.shake.ShakeActivity;
 import com.qi.zhongyi.shuangchen.baodian.utils.ActivityUtil;
+import com.qi.zhongyi.shuangchen.baodian.utils.ToastUtils;
 
 import java.lang.reflect.Field;
 
@@ -83,5 +87,32 @@ public class ZYiMainActivity extends BaseActivity {
     private void initView(View view) {
         ListView listView=(ListView) view.findViewById(R.id.listview_menu);
         listView.setAdapter(new ListMunuAdapter(ZYiMainActivity.this));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        break;
+                    case 1:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        break;
+                    case 2:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        break;
+                    case 3:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        Intent intent=new Intent(ZYiMainActivity.this, ShakeActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        break;
+                    case 5:
+                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
+                        break;
+                }
+            }
+        });
     }
 }

@@ -25,8 +25,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('libs/AutoUpdate_SDK.jar')
+    compile project(':SlidingMenuLibrary')
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:support-v4:25.0.0'
     testCompile 'junit:junit:4.12'
-    compile project(':SlidingMenuLibrary')
 }

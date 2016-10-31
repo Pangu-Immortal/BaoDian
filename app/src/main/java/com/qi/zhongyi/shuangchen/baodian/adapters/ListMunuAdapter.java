@@ -16,7 +16,7 @@ import com.qi.zhongyi.shuangchen.baodian.R;
  */
 
 public class ListMunuAdapter extends BaseAdapter {
-    private String[] menu_text={"登录密码修改", "交易限额设置", "预留信息设置", "手机银行冻结", "操作记录查询", "我的消息"};
+    private String[] menu_text={"登录密码修改", "交易限额设置", "预留信息设置", "摇一摇", "操作记录查询", "我的消息"};
     private int[] menu_icon_login={R.mipmap.menu_2, R.mipmap.menu_3, R.mipmap.menu_4, R.mipmap.menu_6, R.mipmap.menu_5, R.mipmap.menu_1_1};
     private Context mContext;
     private ImageView iv_menu;
