@@ -15,40 +15,44 @@
 
         <ImageView
             android:id="@+id/shakeBg"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:scaleType="fitXY"
             android:src="@mipmap/cz_shakehideimg_man2" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="vertical" >
 
             <RelativeLayout
                 android:id="@+id/shakeImgUp"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="190dp"
-                android:background="#111">
+                android:background="#111"
+                >
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
                     android:src="@mipmap/cz_shake_logo_up"
                     />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/shakeImgDown"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:background="#111">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
                     android:src="@mipmap/cz_shake_logo_down"
                     />
             </RelativeLayout>
@@ -66,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="返回"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textColor="#fff"
             android:onClick="shake_activity_back"
             android:background="@drawable/cz_title_back_btn"/>
@@ -78,7 +82,7 @@
             android:textSize="20sp"
             android:textColor="#ffffff" />
         <ImageButton
-            android:layout_width="67dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"

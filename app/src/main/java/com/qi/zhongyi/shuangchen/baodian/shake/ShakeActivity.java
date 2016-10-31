@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import com.qi.zhongyi.shuangchen.baodian.R;
 import com.qi.zhongyi.shuangchen.baodian.utils.ActivityUtil;
 
