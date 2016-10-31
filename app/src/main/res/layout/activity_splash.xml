@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/recipe_bg"
+    tools:context="com.qi.zhongyi.shuangchen.baodian.SplashActivity"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0.382"
+        android:gravity="bottom" >
+        <TextView
+            android:id="@+id/id2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="2dp"
+            android:text="©2016 双臣诊所 版权所有"
+            android:textColor="#ff0000"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/id_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/id2"
+            android:layout_marginRight="8dp"
+            android:text="v1.0.1"
+            android:textColor="#ff0000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</LinearLayout>

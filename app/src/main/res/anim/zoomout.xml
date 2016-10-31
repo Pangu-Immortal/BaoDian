@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<set xmlns:Android="http://schemas.android.com/apk/res/android"    
+        Android:interpolator="@android:anim/decelerate_interpolator"    
+        Android:zAdjustment="top">    
+    <scale           
+        Android:fromYScale="0.0" Android:toYScale="1.0"    
+        Android:duration="@android:integer/config_mediumAnimTime" /> 
+        </set> 

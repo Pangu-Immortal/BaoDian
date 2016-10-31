@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/eyindao_4">
+
+  <Button
+      android:id="@+id/bt_finish"
+      android:layout_width="180dp"
+      android:layout_height="35dp"
+      android:layout_centerHorizontal="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="51dp"
+      android:background="@mipmap/yindao_tiyan2" />
+    
+</RelativeLayout>
