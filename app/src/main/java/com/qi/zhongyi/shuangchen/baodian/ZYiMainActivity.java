@@ -3,17 +3,22 @@ package com.qi.zhongyi.shuangchen.baodian;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.qi.zhongyi.shuangchen.baodian.adapters.ListMunuAdapter;
 import com.qi.zhongyi.shuangchen.baodian.utils.ActivityUtil;
 
+import java.lang.reflect.Field;
+
 public class ZYiMainActivity extends BaseActivity {
     private SlidingMenu mMenu=null;
+    private int top;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +31,37 @@ public class ZYiMainActivity extends BaseActivity {
         ActivityUtil.getInstance().addActivity(this);
         //初始化菜单
         initMenu(view);
+        top=getTitleTop();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         // 判断当前SDK版本号，如果是4.4以上，就是支持沉浸式状态栏的
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            ((LinearLayout) findViewById(R.id.sou_s)).setPadding(0, top, 0, 0);
         }
+    }
+
+    private int getTitleTop() {
+        Class<?> c=null;
+        Object obj=null;
+        Field field=null;
+        int x=0, sbar=0;
+        try {
+            c=Class.forName("com.android.internal.R$dimen");
+            obj=c.newInstance();
+            field=c.getField("status_bar_height");
+            x=Integer.parseInt(field.get(obj).toString());
+            sbar=getResources().getDimensionPixelSize(x);// 状态栏高度
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        Log.e("状态栏高度:", sbar + ":" + x);
+        return sbar;
     }
 
     private void initMenu(View view) {
