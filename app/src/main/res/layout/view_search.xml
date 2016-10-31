@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#f9989b"
+              android:clipToPadding="true"
+              android:fitsSystemWindows="true"
+              android:paddingTop="20dp"
+              android:id="@+id/main_top"
+              android:orientation="horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/iv_personal_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@mipmap/personal_btn"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@mipmap/search_bg"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/img_serch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/search_btn"
+            />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:hint="请输入功能名称"
+            android:imeOptions="actionSearch"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            />
+
+        <ImageView
+            android:id="@+id/imageView_clear"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/clear"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:id="@+id/iv_speech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/yuyin_btn"
+            />
+    </LinearLayout>
+
+</LinearLayout>

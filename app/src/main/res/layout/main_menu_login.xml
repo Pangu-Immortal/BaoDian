@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/menu_unlogin"
+            />
+    </RelativeLayout>
+    <!-- android:layoutAnimation="@anim/list_anim_layout" 动画 -->
+    <ListView
+        android:id="@+id/listview_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/title_bg"
+        android:layoutAnimation="@anim/list_anim_layout"
+        >
+    </ListView>
+
+</LinearLayout>

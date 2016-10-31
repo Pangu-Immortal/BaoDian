@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <layoutAnimation  
+	    xmlns:android="http://schemas.android.com/apk/res/android"  
+	    android:delay="0.5"  
+	    android:animationOrder="normal"  
+	    android:animation="@anim/slide_right_in"/> 
+	    
+	<!--
+		android:delay - 动画间隔时间；子类动画时间间隔 （延迟）   70% 也可以是一个浮点数 如“1.2”等
+		android:animationOrder - 动画执行的循序(normal：顺序，random：随机，reverse：反向显示)
+		android:animation – 引用动画效果文件
+	  -->
+

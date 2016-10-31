@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60000000"
+     >
+     
+    <LinearLayout 
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e9eaed"
+            android:padding="7dp"
+            >
+            
+            <ImageView 
+                android:id="@+id/update_image"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/iflytek_dialog_image"
+                />
+            
+            <TextView 
+                android:id="@+id/iflytek_update_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/update_image"
+                android:layout_centerVertical="true"
+                android:textAppearance="?android:attr/textAppearanceMediumInverse"
+                android:textColor="#494c53"
+                android:layout_marginLeft="10dp"
+                />
+        </RelativeLayout>
+        
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+             >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/iflytek_update_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                	android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:focusable="true"
+                    android:textColor="#62656d" />
+            </LinearLayout>
+        </ScrollView>
+        
+        <!-- Ok & Cancel  Buttom -->
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            >
+            
+            <LinearLayout
+	            android:layout_height="fill_parent"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:background="#bebfc2"
+	            android:layout_marginLeft="10dp"
+	            android:layout_marginRight="7dp"
+	             >
+                
+                <RelativeLayout 
+                    android:id="@+id/ifltek_cancel"
+		            android:layout_height="fill_parent"
+		            android:layout_width="fill_parent"
+		            android:background="#FFFFFF"
+		            android:layout_margin="0.5dp"
+                    >
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="取消"
+                        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+                        android:textColor="#494c53"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        />
+                </RelativeLayout>
+                
+            </LinearLayout>
+            
+            <LinearLayout
+	            android:layout_height="fill_parent"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:background="#3072bc"
+	            android:layout_marginRight="10dp"
+	            android:layout_marginLeft="7dp"
+	             >
+                
+                <RelativeLayout 
+                    android:id="@+id/ifltek_sure"
+		            android:layout_height="fill_parent"
+		            android:layout_width="fill_parent"
+		            android:background="#549ae7"
+		            android:layout_margin="0.5dp"
+                    >
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="确定"
+                        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+                        android:textColor="#FFFFFF"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        />
+                </RelativeLayout>
+                
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    
+
+</RelativeLayout>
