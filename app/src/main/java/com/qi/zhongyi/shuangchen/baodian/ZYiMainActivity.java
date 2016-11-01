@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -20,9 +22,10 @@ import com.qi.zhongyi.shuangchen.baodian.utils.ToastUtils;
 
 import java.lang.reflect.Field;
 
-public class ZYiMainActivity extends BaseActivity {
+public class ZYiMainActivity extends BaseActivity implements View.OnClickListener {
     private SlidingMenu mMenu=null;
     private int top;
+    private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +36,19 @@ public class ZYiMainActivity extends BaseActivity {
         View view=getLayoutInflater().inflate(R.layout.main_menu_login, null, false);
         // 管理activity
         ActivityUtil.getInstance().addActivity(this);
+        initMainView();
         //初始化菜单
         initMenu(view);
         top=getTitleTop();
 
+    }
+
+    private void initMainView() {
+        ImageView imageView=(ImageView) findViewById(R.id.iv_personal_icon);
+        imageView.setOnClickListener(this);
+        mEditText=(EditText) findViewById(R.id.et_search);
+        ImageView seachView=(ImageView) findViewById(R.id.iv_speech);
+        seachView.setOnClickListener(this);
     }
 
     @Override
@@ -81,7 +93,7 @@ public class ZYiMainActivity extends BaseActivity {
         // 设置渐入渐出效果的值
         mMenu.setFadeDegree(0.35f);
         mMenu.setMenu(view);
-        initView(view);
+        initView(view);//初始化侧边视图
     }
 
     private void initView(View view) {
@@ -101,7 +113,6 @@ public class ZYiMainActivity extends BaseActivity {
                         ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
                         break;
                     case 3:
-                        ToastUtils.show(ZYiMainActivity.this, "点击了 id=" + i);
                         Intent intent=new Intent(ZYiMainActivity.this, ShakeActivity.class);
                         startActivity(intent);
                         break;
@@ -114,5 +125,18 @@ public class ZYiMainActivity extends BaseActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.iv_personal_icon:
+                mMenu.showMenu();
+                break;
+            case R.id.iv_speech:
+                String s=mEditText.getText().toString().trim();
+                
+                break;
+        }
     }
 }
