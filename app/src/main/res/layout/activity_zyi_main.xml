@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_zyi_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff0037"
+    android:orientation="vertical"
     tools:context="com.qi.zhongyi.shuangchen.baodian.ZYiMainActivity"
     >
     <!-- 公共的搜索框 include加载初始化时对象为空，无法get后去设值 -->
@@ -51,7 +52,6 @@
                 android:imeOptions="actionSearch"
                 android:maxLength="8"
                 android:maxLines="1"
-                android:singleLine="true"
                 />
 
             <ImageView
@@ -71,5 +71,12 @@
                 />
         </LinearLayout>
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frame_zu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-</RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>
