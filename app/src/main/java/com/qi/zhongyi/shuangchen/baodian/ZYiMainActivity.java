@@ -3,6 +3,7 @@ package com.qi.zhongyi.shuangchen.baodian;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.qi.zhongyi.shuangchen.baodian.adapters.ListMunuAdapter;
+import com.qi.zhongyi.shuangchen.baodian.fragments.MainFragment;
 import com.qi.zhongyi.shuangchen.baodian.shake.ShakeActivity;
 import com.qi.zhongyi.shuangchen.baodian.utils.ActivityUtil;
 import com.qi.zhongyi.shuangchen.baodian.utils.ToastUtils;
@@ -26,6 +28,7 @@ public class ZYiMainActivity extends BaseActivity implements View.OnClickListene
     private SlidingMenu mMenu=null;
     private int top;
     private EditText mEditText;
+    private FragmentTransaction transAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,10 @@ public class ZYiMainActivity extends BaseActivity implements View.OnClickListene
         //初始化菜单
         initMenu(view);
         top=getTitleTop();
-
+        MainFragment frame_main=new MainFragment();
+        transAction = getSupportFragmentManager().beginTransaction();
+        transAction.replace(R.id.frame_zu, frame_main);
+        transAction.commit();
     }
 
     private void initMainView() {
@@ -135,7 +141,7 @@ public class ZYiMainActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.iv_speech:
                 String s=mEditText.getText().toString().trim();
-                
+
                 break;
         }
     }

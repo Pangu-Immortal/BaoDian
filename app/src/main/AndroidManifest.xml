@@ -36,7 +36,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".ZYiMainActivity">
+        <activity
+            android:name=".ZYiMainActivity"
+            android:windowSoftInputMode="stateHidden"
+            >
         </activity>
         <activity android:name=".GuideViewActivity">
         </activity>
