@@ -19,10 +19,9 @@
 
         <ImageView
             android:id="@+id/iv_personal_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
             android:background="@mipmap/personal_btn"
             />
 
