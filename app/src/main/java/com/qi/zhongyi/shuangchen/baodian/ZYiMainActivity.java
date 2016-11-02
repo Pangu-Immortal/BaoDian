@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.qi.zhongyi.shuangchen.baodian.adapters.ListMunuAdapter;
 import com.qi.zhongyi.shuangchen.baodian.fragments.MainFragment;
