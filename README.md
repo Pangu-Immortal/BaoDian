@@ -9,6 +9,7 @@
 #### 此举也是复杂布局节约内存的方式,所以如果初始化获取布局并设置padding，必然为空对象，修复此处问题后，沉浸式可以正常使用。。
 #### volley以源码的方式集成到了项目里
 #### 具体集成的详细步骤见博客：http://blog.csdn.net/gfg156196/article/details/52996133
+#### volly集成源码：http://blog.csdn.net/gfg156196/article/details/52986234
 
 
 #### gradle-wrapper.properties
