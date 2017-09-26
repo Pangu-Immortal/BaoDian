@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\BaoDian\SlidingMenuLibrary\assets"/><source path="E:\BaoDian\SlidingMenuLibrary\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\BaoDian\SlidingMenuLibrary\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\MyWorks\201794\BaoDian\SlidingMenuLibrary\assets"/><source path="E:\MyWorks\201794\BaoDian\SlidingMenuLibrary\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\MyWorks\201794\BaoDian\SlidingMenuLibrary\src\release\assets"/></dataSet></merger>
