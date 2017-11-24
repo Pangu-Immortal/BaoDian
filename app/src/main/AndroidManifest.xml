@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.qi.zhongyi.shuangchen.baodian"
+          package="com.qi.family.baodian"
     >
 
     <!--连接网络权限，用于执行云端语音能力 -->
@@ -37,20 +37,20 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".ZYiMainActivity"
+            android:name="com.qi.family.baodian.ZYiMainActivity"
             android:windowSoftInputMode="stateHidden"
             >
         </activity>
-        <activity android:name=".GuideViewActivity">
+        <activity android:name="com.qi.family.baodian.GuideViewActivity">
         </activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.qi.family.baodian.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".BaseActivity">
+        <activity android:name="com.qi.family.baodian.BaseActivity">
         </activity>
         <!--讯飞语音版本管理-->
         <!--请将以下示例代码中 your_channel 替换为您自定义的渠道名称。
@@ -84,7 +84,7 @@
             android:process=":IFlytekDownloadService"
             />
         <activity
-            android:name=".shake.ShakeActivity"
+            android:name="com.qi.family.baodian.shake.ShakeActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"

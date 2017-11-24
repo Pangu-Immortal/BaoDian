@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#111"
-    tools:context="com.qi.zhongyi.shuangchen.baodian.shake.ShakeActivity"
+    tools:context="com.qi.family.baodian.shake.ShakeActivity"
     >
     <RelativeLayout
         android:layout_width="fill_parent"

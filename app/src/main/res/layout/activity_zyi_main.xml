@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#ff0037"
     android:orientation="vertical"
-    tools:context="com.qi.zhongyi.shuangchen.baodian.ZYiMainActivity"
+    tools:context="com.qi.family.baodian.ZYiMainActivity"
     >
     <!-- 公共的搜索框 include加载初始化时对象为空，无法get后去设值 -->
     <LinearLayout

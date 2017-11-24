@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.qi.zhongyi.shuangchen.baodian"
+        applicationId "com.qi.family.baodian"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 111
         versionName "1.1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,6 +25,5 @@ dependencies {
     compile project(':SlidingMenuLibrary')
     testCompile 'junit:junit:4.12'
     android { useLibrary 'org.apache.http.legacy' }
-    compile 'com.android.support:support-v4:26.0.0-alpha1'
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+
 }
