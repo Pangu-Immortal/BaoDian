@@ -4,7 +4,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="25" />
+        android:targetSdkVersion="26" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -13,12 +13,12 @@
         android:label="Tests for com.jeremyfeinstein.slidingmenu.lib.test"
         android:targetPackage="com.jeremyfeinstein.slidingmenu.lib.test" />
 
-    <meta-data
-        android:name="android.support.VERSION"
-        android:value="25.3.1" />
-
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
+
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>
