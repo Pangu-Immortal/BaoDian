@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/recipe_bg"
-    tools:context="com.qi.family.baodian.SplashActivity"
+    tools:context="com.qi.family.baodian.com.baodian.SplashActivity"
     android:orientation="vertical"
     >
 

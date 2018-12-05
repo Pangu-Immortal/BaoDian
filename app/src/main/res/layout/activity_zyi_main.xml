@@ -5,9 +5,9 @@
     android:id="@+id/activity_zyi_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0037"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    tools:context="com.qi.family.baodian.ZYiMainActivity"
+    tools:context="com.baodian.HomeActivity"
     >
     <!-- 公共的搜索框 include加载初始化时对象为空，无法get后去设值 -->
     <LinearLayout
@@ -15,14 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#f9989b"
+        android:background="@color/colorPrimary"
         >
 
         <ImageView
             android:id="@+id/iv_personal_icon"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
             android:background="@mipmap/personal_btn"
             />
 
@@ -48,7 +50,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:hint="请输入功能名称"
+                android:hint=" 请输入功能名称"
                 android:imeOptions="actionSearch"
                 android:maxLength="8"
                 android:maxLines="1"

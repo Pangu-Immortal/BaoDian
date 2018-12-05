@@ -1,0 +1,43 @@
+allprojects {
+    repositories {
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://jitpack.io' }
+        jcenter()
+    }
+}
+
+ext {
+    // SDK and tools version
+    androidMinSdkVersion = 16
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    // App dependencies version
+    supportLibraryVersion = '28.0.0'
+    butterKnifeVersion = '8.8.1'
+    loggerVersion = '2.2.0'
+    gsonVersion = '2.8.5'
+    glideVersion = '4.8.0'
+
+    tinypinyinVersion = '1.0.0'
+    retrofitVersion = '2.1.0'
+    xrecyclerviewVersion = '1.5.9'
+    fastjsonVersion = '1.2.49'
+    okhttpVersion = '3.11.0'
+    androideventbusVersion = '1.0.5.1'
+    ExpandableTextViewVersion = '1.0.3'
+    nettyVersion = '4.1.21.Final'
+    timqiVersion = '1.1.2'
+    greendaoVersion = '3.2.2'
+    greenDaoHelperVersion = 'v2.1.0'
+    PictureSelectorVersion = 'v2.2.3'
+    pgyersdkVersion = '2.8.1'
+    EmojiVersion = '1.0.0'
+    rxDownloadVersion = '1.2.7'
+    PopwindowVersion = '2.1.1'
+    PhotoViewVersion = '1.2.6'
+    crashreportVersion = '2.6.6'
+    nativecrashreportVersion = '3.3.1'
+    constraintlayoutVersion = '1.1.3'
+}
+
