@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
               android:orientation="vertical"
-             tools:context="com.qi.family.baodian.fragments.MainFragment"
+             tools:context="com.qi.family.baodian.com.baodian.fragments.MainFragment"
     >
 
    <RelativeLayout
@@ -16,11 +16,11 @@
 
       <!-- ViewPager是一个控件 -->
 
-      <com.qi.family.baodian.MyView.autoViewPagers.AutoScrollViewPager
+      <com.baodian.MyView.autoViewPagers.AutoScrollViewPager
           android:id="@+id/adv_pager"
           android:layout_width="match_parent"
           android:layout_height="match_parent" >
-      </com.qi.family.baodian.MyView.autoViewPagers.AutoScrollViewPager>
+      </com.baodian.MyView.autoViewPagers.AutoScrollViewPager>
 
       <LinearLayout
           android:id="@+id/viewGroup"
@@ -70,12 +70,12 @@
           android:textSize="18sp" />
    </LinearLayout>
 
-   <com.qi.family.baodian.MyView.HorizontalListView
+   <com.baodian.MyView.HorizontalListView
        android:id="@+id/horizon_listview"
        android:layout_width="match_parent"
        android:layout_height="123dp"
        android:layout_alignParentTop="true"
        android:background="@color/white"
        android:textColor="#000000" >
-   </com.qi.family.baodian.MyView.HorizontalListView>
+   </com.baodian.MyView.HorizontalListView>
 </LinearLayout>

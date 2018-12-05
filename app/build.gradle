@@ -1,29 +1,113 @@
 apply plugin: 'com.android.application'
 
+//获取日期
+def releaseTime() {
+    return new Date().format("yyyyMMddHH", TimeZone.getDefault())
+}
+
 android {
-    compileSdkVersion 27
-    buildToolsVersion "26.0.2"
+    def globalConfig = rootProject.extensions.getByName('ext')
+    compileSdkVersion globalConfig['androidCompileSdkVersion']
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.qi.family.baodian"
-        minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 111
-        versionName "1.1.1"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion globalConfig['androidMinSdkVersion']
+        targetSdkVersion globalConfig['androidTargetSdkVersion']
+        applicationId globalConfig['androidApplicationID']
+        versionName globalConfig['androidVersionName']
+        //方法超数64k
+        multiDexEnabled false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file('../buildsystem/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file('../buildsystem/gimi.keystore')
+            storePassword 'gimi123;'
+            keyAlias 'uconsole'
+            keyPassword 'gimi123;'
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (!variant.buildType.isDebuggable()) {
+                def sourceFile = "app-${variant.flavorName}-${variant.buildType.name}"
+                def replaceFile = "my_${variant.productFlavors[0].name}_${defaultConfig.versionCode}_${releaseTime()}"
+                outputFileName = output.outputFile.name.replace(sourceFile, replaceFile);
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        xiaomi {}
+    }
+}
+
+// 强制所有的第三方包使用指定版本的support包：
+configurations.all {
+    resolutionStrategy {
+        force "com.android.support:design:$rootProject.supportLibraryVersion"
+        force "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+        force "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+        force "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/AutoUpdate_SDK.jar')
-    compile project(':SlidingMenuLibrary')
-    testCompile 'junit:junit:4.12'
-    android { useLibrary 'org.apache.http.legacy' }
+    // Include ${module}/libs/*.jar, Do not alone import!
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation project(':SlidingMenuLibrary')
+
+    // Android official support dependencies
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+
+    // 用 Retrofit2 + RxJava2 封装网络框架
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    // 必要rxjava2依赖
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    // 必要rxandrroid依赖，切线程时需要用到
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    // 必要retrofit依赖
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // 必要依赖，和Rxjava结合必须用到
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // 必要依赖，解析json字符所用
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    // logger
+    implementation "com.orhanobut:logger:$rootProject.loggerVersion"
+    // butterknife
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    // glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    // gson
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    // Android开发万能Utils
+    implementation 'com.blankj:utilcode:1.22.0'
+    // 异步编程：JDeferred 2.x
+    implementation 'org.jdeferred.v2:jdeferred-android-aar:2.0.0-beta1'
 
 }
