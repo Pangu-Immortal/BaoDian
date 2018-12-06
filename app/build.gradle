@@ -10,10 +10,14 @@ android {
     compileSdkVersion globalConfig['androidCompileSdkVersion']
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
+        applicationId globalConfig['androidApplicationID']
+
+        versionCode globalConfig['androidVersionCode']
+        versionName globalConfig['androidVersionName']
+
         minSdkVersion globalConfig['androidMinSdkVersion']
         targetSdkVersion globalConfig['androidTargetSdkVersion']
-        applicationId globalConfig['androidApplicationID']
-        versionName globalConfig['androidVersionName']
+
         //方法超数64k
         multiDexEnabled false
     }
