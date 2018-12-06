@@ -2,6 +2,7 @@
 这是一个App框架（功能完善可以快速开发自己的App）
 
 <iframe height=1024 width=768 src="https://github.com/yugu88/BaoDian/blob/master/doc/device-2018-12-06-153552.mp4">
+
 ##### 实验了slidingMenu侧滑的沉浸式效果，功能已完成。。
 #### 初始化时，获取布局文件，动态设置padding值为空，因为include加载布局的方法初始化无法进入内存，
 #### 此举也是复杂布局节约内存的方式,所以如果初始化获取布局并设置padding，必然为空对象，修复此处问题后，沉浸式可以正常使用。。
