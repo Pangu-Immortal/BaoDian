@@ -26,6 +26,15 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+
+    Properties properties = new Properties()
+    def localProp = file(project.rootProject.file('local.properties'))
+    if (localProp.exists()) {
+        properties.load(localProp.newDataInputStream())
+    }
+    def keyFile = file(properties.getProperty("keystore.path") ?: "/tmp/does_not_exist")
+
+
     signingConfigs {
         debug {
             storeFile file('../buildsystem/debug.keystore')
@@ -34,16 +43,18 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('../buildsystem/gimi.keystore')
-            storePassword 'gimi123;'
-            keyAlias 'uconsole'
-            keyPassword 'gimi123;'
+            keyAlias properties.getProperty("keystore.alias")
+            keyPassword properties.getProperty("keystore.pwd")
+            storeFile keyFile
+            storePassword properties.getProperty("keystore.alias_pwd")
         }
     }
     buildTypes {
         release {
             minifyEnabled true
             zipAlignEnabled true
+            // 禁用图片自动压缩功能
+            crunchPngs false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -64,7 +75,10 @@ android {
 
     flavorDimensions "default"
     productFlavors {
-        xiaomi {}
+        xiaomi {
+            // 禁用不必要编译的目录
+            resConfigs "en","xxxhdpi"
+        }
     }
 }
 

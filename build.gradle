@@ -24,7 +24,7 @@ allprojects {
 
     ext {
         androidApplicationID = 'qi.school'
-        androidVersionCode = 102
+        androidVersionCode = 103
         androidVersionName = '3.0'
     }
 }
