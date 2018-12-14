@@ -11,6 +11,7 @@
 #### 具体原理： [http://blog.csdn.net/gfg156196/article/details/52996133](http://blog.csdn.net/gfg156196/article/details/52996133)
 #### volly集成源码方式： [http://blog.csdn.net/gfg156196/article/details/52986234](http://blog.csdn.net/gfg156196/article/details/52986234)
 
+### 功能会持续不断的完善添加，会继续保持各部分功能模块独立。方便业务拓展。
 
 #### gradle-wrapper.properties
     distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
@@ -33,4 +34,4 @@
     * 并非每次从栈中移除都节省CPU和内存的消耗，根据跳转逻辑斟酌使用。
     */
 ```
-![image](https://github.com/yugu88/BaoDian/blob/master/app/src/main/res/mipmap-xxxhdpi/main_gg.jpeg)
+![image](https://github.com/yugu88/BaoDian/blob/master/app/src/main/res/mipmap-xxhdpi/main_gg.jpeg)
