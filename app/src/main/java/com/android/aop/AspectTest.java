@@ -20,19 +20,19 @@ public class AspectTest {
 
     private static final String TAG = "qihao";
 
-    @Before("execution(* android.app.Activity.on**(..))")
+    @Before("execution(* com.android.mvp.activity.LoginActivit.on**(..))")
     public void onActivityMethodBefore(JoinPoint joinPoint) throws Throwable {
         String key = joinPoint.getSignature().toString();
         Log.d(TAG, "onActivityMethodBefore: " + key);
     }
 
-    @After("execution(* com.xys.aspectjxdemo.MainActivity.on*(android.os.Bundle))")
+    @After("execution(* com.android.mvp.activity.LoginActivit.on*(android.os.Bundle))")
     public void onActivityMethodAfter(JoinPoint joinPoint) throws Throwable {
         String key = joinPoint.getSignature().toString();
         Log.d(TAG, "onActivityMethodAfter: " + key);
     }
 
-    @Around("execution(* com.xys.aspectjxdemo.MainActivity.testAOP())")
+    @Around("execution(* com.android.mvp.activity.LoginActivit.testAOP())")
     public void onActivityMethodAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String key = proceedingJoinPoint.getSignature().toString();
         Log.d(TAG, "onActivityMethodAroundFirst: " + key);
