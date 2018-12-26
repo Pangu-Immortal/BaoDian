@@ -7,25 +7,19 @@ buildscript {
         maven { url 'https://jitpack.io' }
         jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-
+        classpath 'org.aspectj:aspectjtools:1.9.1'
     }
 }
 
 allprojects {
-    repositories {
-        maven { url 'https://maven.google.com' }
-        maven { url 'https://jitpack.io' }
-        jcenter()
-        google()
-    }
-
     ext {
-        androidApplicationID = 'qi.school'
+        androidApplicationID = 'qi.hao'
         androidVersionCode = 103
-        androidVersionName = '3.0'
+        androidVersionName = '3.0.0'
     }
 }
 
