@@ -29,4 +29,5 @@ task clean(type: Delete) {
 
 repositories {
     maven { url 'https://maven.google.com' }
+    google()
 }
