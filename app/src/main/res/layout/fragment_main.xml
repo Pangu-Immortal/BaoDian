@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
               android:orientation="vertical"
-             tools:context="com.qi.family.baodian.com.baodian.fragments.MainFragment"
+             tools:context="com.qihao.family.baodian.com.baodian.fragments.MainFragment"
     >
 
    <RelativeLayout
