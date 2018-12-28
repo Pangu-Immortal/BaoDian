@@ -3,7 +3,7 @@ package com.baodian;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.FragmentTransaction;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;

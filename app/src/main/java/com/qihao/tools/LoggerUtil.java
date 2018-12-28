@@ -1,8 +1,5 @@
 package com.qihao.tools;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
@@ -10,6 +7,8 @@ import com.orhanobut.logger.PrettyFormatStrategy;
 
 import javax.inject.Inject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import qi.school.BuildConfig;
 
 /**
