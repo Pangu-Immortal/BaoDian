@@ -6,9 +6,13 @@ package com.qihao.mvp.base;
  * @author qihao
  * @date on 2018/12/25 16:55
  */
-public interface  BaseView {
+public interface BaseView {
 
 //    LifecycleProvider<Lifecycle.Event> getLifecycleProvider();
 
     void toast(CharSequence message);
+
+    void showLodading();
+
+    void dimissLoading();
 }

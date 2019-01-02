@@ -1,13 +1,11 @@
 package com.qihao.api;
 
-import com.qihao.beans.Translation;
-import com.qihao.beans.YdTranslation;
+import com.qihao.beans.AppInfo;
+import com.qihao.beans.PageBean;
 
 import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * (核心功能)：接口url
@@ -25,13 +23,8 @@ public interface ApiService {
     // w：查询内容
     // http://fy.iciba.com/ajax.php?a=fy&f=auto&t=auto&w=hello%20world
 
-    // 金山词霸API
-    @GET("ajax.php?a=fy&f=auto&t=auto&w=hello%20world")
-    Call<Translation> getCall();
+    public static final String BASE_URL = "http://112.124.22.238:8081/course_api/cniaoplay/";
 
-    // 有道翻译API
-    @POST("http://fanyi.youdao.com/translate?doctype=json&jsonversion=&type=&keyfrom=&model=&mid=&imei=&vendor=&screen=&ssid=&network=&abtest=")
-    @FormUrlEncoded
-    Call<YdTranslation> postCall(@Field("i") String targetSentence);
-
+    @GET("featured")
+    public Call<PageBean<AppInfo>> getApps(@Query("p") String jsonParam);
 }
