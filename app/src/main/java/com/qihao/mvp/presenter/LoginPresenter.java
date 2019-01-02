@@ -1,13 +1,10 @@
 package com.qihao.mvp.presenter;
 
-import com.qihao.api.ApiService;
-import com.qihao.beans.Translation;
-import com.qihao.beans.YdTranslation;
+import com.qihao.beans.AppInfo;
+import com.qihao.beans.PageBean;
 import com.qihao.mvp.activity.LoginActivity;
-import com.qihao.mvp.base.BasePresenter;
-import com.qihao.mvp.contract.MainContract;
-import com.qihao.mvp.model.MainModel;
-import com.qihao.tools.LoggerUtil;
+import com.qihao.mvp.contract.LoginContract;
+import com.qihao.mvp.model.LoginModel;
 
 import javax.inject.Inject;
 
@@ -21,44 +18,35 @@ import retrofit2.Response;
  * @author qihao
  * @date on 2018/12/25 17:03
  */
-public class LoginPresenter extends BasePresenter implements MainContract.Presenter {
+public class LoginPresenter implements LoginContract.Presenter {
 
-    private final LoginActivity view;
-    private final MainModel model;
+    private final LoginActivity mView;
+    private final LoginModel mModel;
 
     @Inject
-    public LoginPresenter(LoginActivity view, MainModel model) {
-        this.view = view;
-        this.model = model;
+    public LoginPresenter(LoginActivity view) {
+        this.mView = view;
+        mModel = new LoginModel();
     }
 
-    public void requestGet(ApiService service) {
-        Call<Translation> call = service.getCall();
-        call.enqueue(new Callback<Translation>() {
+    @Override
+    public void requestDatas() {
+        mView.showLodading();
+        mModel.getApp(new Callback<PageBean<AppInfo>>() {
             @Override
-            public void onResponse(Call<Translation> call, Response<Translation> response) {
-                LoggerUtil.i(response.body().toString());
+            public void onResponse(Call<PageBean<AppInfo>> call, Response<PageBean<AppInfo>> response) {
+                if (response != null) {
+                    mView.showResult(response.body().getDatas());
+                } else {
+                    mView.showNodata();
+                }
+                mView.dimissLoading();
             }
 
             @Override
-            public void onFailure(Call<Translation> call, Throwable throwable) {
-                LoggerUtil.e(throwable.getMessage());
-            }
-        });
-    }
-
-    public void requestPost(ApiService service) {
-        Call<YdTranslation> call = service.postCall("I love you");
-        call.enqueue(new Callback<YdTranslation>() {
-
-            @Override
-            public void onResponse(Call<YdTranslation> call, Response<YdTranslation> response) {
-                LoggerUtil.i(response.body().getTranslateResult().get(0).get(0).getTgt());
-            }
-
-            @Override
-            public void onFailure(Call<YdTranslation> call, Throwable throwable) {
-                LoggerUtil.e(throwable.getMessage());
+            public void onFailure(Call<PageBean<AppInfo>> call, Throwable t) {
+                mView.dimissLoading();
+                mView.showError(t.getMessage());
             }
         });
     }
