@@ -1,11 +1,12 @@
 # BaoDian
+
 这是一个App框架（功能完善可以快速开发自己的App）
 
 ![image](https://github.com/yugu88/BaoDian/blob/master/doc/device-2018-12-06-153552.gif)
 
 # Android Studio 3.2.1 + gradle-4.6
 
-# 基于MVP+Dagger2+Retrofit2.0+Rxjava2开发
+## 基于MVP+Dagger2+Retrofit2.0+Rxjava2开发
 
 #### volley以源码的方式集成到了项目里
 
@@ -13,6 +14,15 @@
 
 #### gradle-wrapper.properties
     distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
+    classpath 'com.android.tools.build:gradle:3.2.1'
+
+```
+    compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+```
 
 #### 关于退出和栈中Activity实时管理
 ```
