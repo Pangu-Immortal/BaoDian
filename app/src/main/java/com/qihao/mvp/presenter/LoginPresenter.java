@@ -3,6 +3,7 @@ package com.qihao.mvp.presenter;
 import com.qihao.beans.AppInfo;
 import com.qihao.beans.PageBean;
 import com.qihao.mvp.activity.LoginActivity;
+import com.qihao.mvp.base.BasePresenter;
 import com.qihao.mvp.contract.LoginContract;
 import com.qihao.mvp.model.LoginModel;
 
@@ -18,7 +19,7 @@ import retrofit2.Response;
  * @author qihao
  * @date on 2018/12/25 17:03
  */
-public class LoginPresenter implements LoginContract.Presenter {
+public class LoginPresenter extends BasePresenter implements LoginContract.Presenter {
 
     private final LoginActivity mView;
     private final LoginModel mModel;
@@ -31,7 +32,7 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     @Override
     public void requestDatas() {
-        mView.showLodading();
+        mView.showLoading();
         mModel.getApp(new Callback<PageBean<AppInfo>>() {
             @Override
             public void onResponse(Call<PageBean<AppInfo>> call, Response<PageBean<AppInfo>> response) {
@@ -40,13 +41,13 @@ public class LoginPresenter implements LoginContract.Presenter {
                 } else {
                     mView.showNodata();
                 }
-                mView.dimissLoading();
+                mView.dismissLoading();
             }
 
             @Override
             public void onFailure(Call<PageBean<AppInfo>> call, Throwable t) {
-                mView.dimissLoading();
-                mView.showError(t.getMessage());
+                mView.dismissLoading();
+                mView.showErrors(t.getMessage());
             }
         });
     }

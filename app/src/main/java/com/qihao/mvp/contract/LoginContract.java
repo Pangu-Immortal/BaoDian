@@ -4,7 +4,6 @@ package com.qihao.mvp.contract;
 import com.qihao.beans.AppInfo;
 import com.qihao.beans.PageBean;
 import com.qihao.mvp.base.BaseModel;
-import com.qihao.mvp.base.BasePresenter;
 import com.qihao.mvp.base.BaseView;
 
 import java.util.List;
@@ -23,10 +22,9 @@ public interface LoginContract {
     interface View extends BaseView {
         void  showResult(List<AppInfo> datas);
         void showNodata();
-        void showError(String msg);
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter {
         void requestDatas();
     }
 

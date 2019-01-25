@@ -12,7 +12,9 @@ public interface BaseView {
 
     void toast(CharSequence message);
 
-    void showLodading();
+    void showLoading();
 
-    void dimissLoading();
+    void showErrors(String msg);
+
+    void dismissLoading();
 }
