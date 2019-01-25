@@ -22,4 +22,34 @@ public class SplashActivity extends BaseActivity {
 
         Logger.i("对象2:"+student.toString());
     }
+
+    @Override
+    public int setLayout() {
+        return 0;
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void toast(CharSequence message) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void showErrors(String msg) {
+
+    }
+
+    @Override
+    public void dismissLoading() {
+
+    }
 }

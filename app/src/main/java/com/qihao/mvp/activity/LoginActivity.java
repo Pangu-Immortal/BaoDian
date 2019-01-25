@@ -1,7 +1,6 @@
 package com.qihao.mvp.activity;
 
 import android.app.ProgressDialog;
-import android.os.Bundle;
 import android.widget.Button;
 
 import com.qihao.beans.AppInfo;
@@ -16,11 +15,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import qi.school.R;
 
-public class LoginActivity extends BaseActivity implements LoginContract.View {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
 
     @Inject
     Student student;
@@ -33,11 +31,12 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     private ProgressDialog mProgressDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+    public int setLayout() {
+        return R.layout.activity_login;
+    }
 
+    @Override
+    public void init() {
         mProgressDialog = new ProgressDialog(this);
     }
 
@@ -46,7 +45,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     public void onViewClicked() {
         LoggerUtil.i("student:"+student.getName());
         LoggerUtil.i("对象:"+student.toString());
-
         presenter.requestDatas();
     }
 
@@ -63,8 +61,15 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-    public void showError(String msg) {
+    public void showErrors(String msg) {
         LoggerUtil.d("showError="+msg);
+    }
+
+    @Override
+    public void dismissLoading() {
+        if(mProgressDialog.isShowing()){
+            mProgressDialog.dismiss();
+        }
     }
 
     @Override
@@ -73,14 +78,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-    public void showLodading() {
+    public void showLoading() {
         mProgressDialog.show();
-    }
-
-    @Override
-    public void dimissLoading() {
-        if(mProgressDialog.isShowing()){
-            mProgressDialog.dismiss();
-        }
     }
 }
