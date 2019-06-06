@@ -108,8 +108,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     // 用 Retrofit2 + RxJava2 封装网络框架
-    implementation "io.reactivex.rxjava2:rxjava:2.2.3" // 必要rxjava2依赖
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.0" // 必要rxandrroid依赖，切线程时需要用到
+    implementation "io.reactivex.rxjava2:rxjava:2.2.7" // 必要rxjava2依赖
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1" // 必要rxandrroid依赖，切线程时需要用到
     // 必要retrofit依赖
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'// 必要retrofit依赖
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'// 必要依赖，和Rxjava结合必须用到
@@ -140,17 +140,6 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
     implementation 'org.aspectj:aspectjrt:1.9.1'
 
-//    //For Lifecycles, LiveData and ViewModel
-//    implementation 'android.arch.lifecycle:runtime:1.1.1'
-//    implementation 'android.arch.lifecycle:extensions:1.1.1'
-//    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
-//    //For Room
-//    implementation 'android.arch.persistence.room:runtime:1.1.1'
-//    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
-//    implementation "android.arch.lifecycle:common-java8:1.1.1"
-//    implementation "android.arch.paging:rxjava2:1.0.1"
-//    implementation "android.arch.persistence.room:rxjava2:1.1.1"
-//    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
 }
 
 final def log = project.logger

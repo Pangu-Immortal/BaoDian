@@ -20,12 +20,13 @@ import qi.school.R;
 
 public class LoginActivity extends BaseActivity implements MainContract.View {
 
-    @Inject
-    Student student;
+//    @Inject
+//    Student student;
+//    @Inject
+//    ApiService service;
+
     @Inject
     LoginPresenter presenter;
-    @Inject
-    ApiService service;
 
     @BindView(R.id.login_button)
     Button login;
@@ -40,10 +41,13 @@ public class LoginActivity extends BaseActivity implements MainContract.View {
 
     @OnClick(R.id.login_button)
     public void onViewClicked() {
-        LoggerUtil.i("student:"+student.getName());
-        LoggerUtil.i("对象:"+student.toString());
-        presenter.requestGet(service);
-        presenter.requestPost(service);
+//        LoggerUtil.i("student:"+student.getName());
+//        LoggerUtil.i("对象:"+student.toString());
+
+        presenter.log();
+
+//        presenter.requestGet(service);
+//        presenter.requestPost(service);
 //        startActivity(new Intent(this, SplashActivity.class));
     }
 

@@ -2,6 +2,7 @@ package com.qihao.internal.di.modules;
 
 import com.qihao.api.ApiService;
 import com.qihao.beans.Student;
+import com.qihao.beans.User;
 import com.qihao.tools.NetUtil;
 
 import java.io.IOException;
@@ -28,8 +29,8 @@ public class ConfigModule {
 
     @Singleton
     @Provides
-    public Student provideStudent() {
-        return new Student();
+    public User provideStudent() {
+        return new User();
     }
 
     @Singleton

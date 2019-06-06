@@ -8,6 +8,9 @@ package com.qihao.beans;
  */
 public class User {
 
+    public User() {
+    }
+
     private String name = "我的名字…User…";
 
     public String getName() {
