@@ -13,8 +13,8 @@
 #### 具体原理： [http://blog.csdn.net/gfg156196/article/details/52996133](http://blog.csdn.net/gfg156196/article/details/52996133)
 
 #### gradle-wrapper.properties
-    distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
-    classpath 'com.android.tools.build:gradle:3.2.1'
+    distributionUrl=https\://services.gradle.org/distributions/gradle-5.1.1-all.zip
+    classpath 'com.android.tools.build:gradle:3.4.1'
 
 ```
     compileOptions {
