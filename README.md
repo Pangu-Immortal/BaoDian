@@ -17,7 +17,7 @@
 ### 功能会持续不断的完善添加，会继续保持各部分功能模块独立。方便业务拓展。
 
 #### gradle-wrapper.properties
-    distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
+    distributionUrl=https\://services.gradle.org/distributions/gradle-5.1.1-all.zip
 
 #### 关于退出和栈中Activity实时管理
 ```

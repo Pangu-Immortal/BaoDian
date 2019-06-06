@@ -1,8 +1,10 @@
 package com.qihao.mvp.presenter;
 
 import com.qihao.api.ApiService;
+import com.qihao.beans.Student;
 import com.qihao.beans.Translation;
 import com.qihao.beans.YdTranslation;
+import com.qihao.internal.di.scope.ActivityScope;
 import com.qihao.mvp.activity.LoginActivity;
 import com.qihao.mvp.base.BasePresenter;
 import com.qihao.mvp.contract.MainContract;
@@ -27,9 +29,17 @@ public class LoginPresenter extends BasePresenter implements MainContract.Presen
     private final MainModel model;
 
     @Inject
+    Student student;
+
+    @Inject
     public LoginPresenter(LoginActivity view, MainModel model) {
         this.view = view;
         this.model = model;
+    }
+
+    public void log(){
+        // 验证 @Inject 能不能这样在任意类中，随意构建对象
+        LoggerUtil.i("LoginPresenter student:"+student.getName());
     }
 
     public void requestGet(ApiService service) {
