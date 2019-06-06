@@ -4,7 +4,7 @@
 
 ![image](https://github.com/yugu88/BaoDian/blob/master/doc/device-2018-12-06-153552.gif)
 
-# Android Studio 3.2.1 + gradle-4.6
+# Android Studio 3.4.1 + gradle-5.1.1
 
 ## 基于MVP+Dagger2+Retrofit2.0+Rxjava2开发
 
