@@ -1,6 +1,8 @@
 # BaoDian
 这是一个App框架（功能完善可以快速开发自己的App）
 
+gradle-5.1.1  studio 3.4.1
+
 ![image](https://github.com/yugu88/BaoDian/blob/master/doc/device-2018-12-06-153552.gif)
 
 
