@@ -1,6 +1,6 @@
 # BaoDian
 
-这是一个App框架（功能完善可以快速开发自己的App）
+这是一个App框架（功能完善可以快速开发自己的App）今后只维护 MVP分支，此页面将会看不到最近更新日期。
 
 ![image](https://github.com/yugu88/BaoDian/blob/master/doc/device-2018-12-06-153552.gif)
 
