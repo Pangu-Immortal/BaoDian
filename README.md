@@ -8,7 +8,6 @@
 
 ## 基于MVP+Dagger2+Retrofit2.0+Rxjava2开发
 
-#### 其中一个分支介绍了volley以源码的方式集成到了项目里的方式
 
 #### 具体原理： [http://blog.csdn.net/gfg156196/article/details/52996133](http://blog.csdn.net/gfg156196/article/details/52996133)
 
