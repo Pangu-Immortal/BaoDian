@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-  <b>⭐ 点击 <a href="https://github.com/Pangu-Immortal/BaoDian">Star</a>，关注不迷路 ⭐</b>
+  <b>🌟 如果觉得有帮助，请点击 <a href="https://github.com/Pangu-Immortal/BaoDian/stargazers">Star</a> 支持一下，关注不迷路！🌟</b>
 </p>
 
 这是一个App框架（功能完善可以快速开发自己的App）今后只维护 MVP分支，此页面将会看不到最近更新日期。
