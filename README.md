@@ -1,3 +1,5 @@
+![访客统计](https://count.getloli.com/get/@BaoDian?theme=rule34)
+
 # BaoDian
 
 这是一个App框架（功能完善可以快速开发自己的App）今后只维护 MVP分支，此页面将会看不到最近更新日期。
@@ -41,3 +43,24 @@
 ```
 
 ![image](https://github.com/yugu88/BaoDian/blob/master/app/src/main/res/mipmap-xxhdpi/main_gg.jpeg)
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Pangu-Immortal/BaoDian&type=Date)](https://star-history.com/#Pangu-Immortal/BaoDian&Date)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
