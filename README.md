@@ -1,4 +1,9 @@
-![访客统计](https://count.getloli.com/get/@BaoDian?theme=rule34)
+<div align="center">
+
+![萌萌计数器](https://count.getloli.com/get/@BaoDian?theme=rule34)
+
+</div>
+
 
 # BaoDian
 
@@ -9,8 +14,6 @@
 # Android Studio 3.4.1 + gradle-5.1.1
 
 ## 基于MVP+Dagger2+Retrofit2.0+Rxjava2开发
-
-
 #### 具体原理： [http://blog.csdn.net/gfg156196/article/details/52996133](http://blog.csdn.net/gfg156196/article/details/52996133)
 
 #### gradle-wrapper.properties
@@ -59,8 +62,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
